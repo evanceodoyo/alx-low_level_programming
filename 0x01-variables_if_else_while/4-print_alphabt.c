@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 /**
  * main - Prints the alphabet in lowercase except "q" and "e"
  *
@@ -16,6 +18,6 @@ int main(void)
 			putchar(i);
 		}
 	}
-	putchar('\n')
+	putchar('\n');
 	return (0);
 }
