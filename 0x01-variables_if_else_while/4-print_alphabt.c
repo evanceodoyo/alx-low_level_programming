@@ -7,14 +7,13 @@
  */
 int main(void)
 {
-	char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
 	int i;
 
-	for (i = 0; i < 26; i++)
+	for (i = 97; i < 123; i++)
 	{
-		if (alphabet[i] != "e" && alphabet[i] != "q")
+		if (i != 101 && i != 113)
 		{
-			putchar(alphabet[i]);
+			putchar(i);
 		}
 	}
 	putchar('\n')
