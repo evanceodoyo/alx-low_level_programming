@@ -1,4 +1,4 @@
-#include <stidio.h>
+#include <stdio.h>
 /**
  * main - Print Fibonacci numbers starting with 1 and 2
  *
