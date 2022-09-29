@@ -29,7 +29,7 @@ int sqrt_func(int n, int l)
 	if (l * l > n)
 		return (-1);
 	if (l * l == n)
-		return (i);
+		return (l);
 
 	return (sqrt_func(n, i + 1));
 }
