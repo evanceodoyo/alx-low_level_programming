@@ -56,7 +56,7 @@ int _atoi(char *s)
 
 int main(int argc, char *argv[])
 {
-	int product, n, m;
+	int product, num1, num2;
 
 	if (argc == 3)
 	{
