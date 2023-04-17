@@ -1,5 +1,7 @@
 #ifndef SEARCH_ALGOS_H
 #define SEARCH_ALGOS_H
+#include <stdio.h>
+#include <stdlib.h>
 
 /*
  * Desc: Header file containing all function prototypes.
