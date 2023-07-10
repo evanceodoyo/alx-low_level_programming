@@ -33,8 +33,6 @@ void print_arr(int *array, size_t l, size_t r)
 
 int binary_search(int *array, size_t size, int value)
 {
-	size_t val = -1;
-
 	if (array != NULL)
 	{
 		size_t l = 0;
@@ -47,14 +45,12 @@ int binary_search(int *array, size_t size, int value)
 			midpoint = (l + r) / 2;
 
 			if (array[midpoint] == value)
-			{	val = midpoint;
-				break;
-			}
+				return (midpoint);
 			else if (array[midpoint] < value)
 				l = midpoint + 1;
 			else
 				r = midpoint - 1;
 		}
 	}
-	return (val);
+	return (-1);
 }
