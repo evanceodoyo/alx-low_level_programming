@@ -33,25 +33,30 @@ void print_arr(int *array, size_t l, size_t r)
 
 int recursive_bin_search(int *array, size_t l, size_t r, int value)
 {
+	size_t mid = (l + r) / 2;
+
+	print_arr(array, l, r);
+
+	if (array[mid] == value)
+	{
+		print_arr(array, l, mid);
+
+		if (array[mid] == array[mid - 1])
+		{
+			print_arr(array, mid - 1, mid);
+			mid--;
+		}
+		return (mid);
+	}
+
 	if (r >= l)
 	{
-		size_t mid = (l + r) / 2;
-
-		print_arr(array, l, r);
-		if  (array[mid] == value)
-		{
-			if (array[mid] == array[mid -1])
-			{
-				print_arr(array, mid - 1, mid);
-				mid--;
-			}
-			return (mid);
-		}
 		if (array[mid] > value)
-			return (recursive_bin_search(array, l, mid - 1, value));
+			return (recursive_bin_search(array, l, mid, value));
 
 		return (recursive_bin_search(array, mid + 1, r, value));
 	}
+
 	return (-1);
 }
 
@@ -69,6 +74,7 @@ int advanced_binary(int *array, size_t size, int value)
 	{
 		size_t l = 0;
 		size_t r = size - 1;
+
 		return (recursive_bin_search(array, l, r, value));
 	}
 	return (-1);
