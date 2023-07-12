@@ -24,19 +24,16 @@ skiplist_t *trav_list(skiplist_t *list)
 
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-
 	skiplist_t *runner = list;
 	skiplist_t *prev;
 
 	if (list == NULL)
 		return (NULL);
-
 	while (runner != NULL)
 	{
 		prev = runner;
 		runner = runner->express;
-		printf("Value checked at index [%lu] = [%d]\n",
-		       runner->index, runner->n);
+		printf("Value checked at index [%lu] = [%d]\n", runner->index, runner->n);
 		if (runner->n >= value)
 			break;
 		if (runner->express == NULL)
@@ -46,7 +43,8 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 			break;
 		}
 	}
-	printf("Value found between indexes [%lu] and [%lu]\n", prev->index, runner->index);
+	printf("Value found between indexes [%lu] and [%lu]\n",
+			prev->index, runner->index);
 	while (prev->index <= runner->index)
 	{
 		if (prev->index == runner->index)
@@ -57,7 +55,6 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 			else
 				return (NULL);
 		}
-
 		if (prev->n == value)
 		{
 			printf("Value checked at index [%lu] = [%d]\n", prev->index, prev->n);
