@@ -33,7 +33,7 @@ void print_arr(int *array, size_t l, size_t r)
 
 int recursive_bin_search(int *array, size_t l, size_t r, int value)
 {
-	size_t mid = (l + r) / 2;
+	size_t mid = l + (l - r) / 2;
 
 	print_arr(array, l, r);
 
