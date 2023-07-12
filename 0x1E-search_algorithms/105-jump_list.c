@@ -23,7 +23,7 @@ listint_t *trav_list(listint_t *list, size_t step)
 }
 
 /**
- * jump_list - searches for a value in a sorted list using Jump search algorithm
+ * jump_list - Jump search in a singly linked list
  * @list: pointer to the head of the list to search in.
  * @size: number of nodes in list.
  * @value: value to search for.
@@ -40,24 +40,19 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		return (NULL);
 
 	step = sqrt(size);
-
 	while (runner->n < value)
 	{
 		prev = runner;
 		runner = trav_list(runner, step);
-
 		if (runner->next == NULL)
 		{
 			printf("Value checked at index [%ld] = [%d]\n", runner->index, runner->n);
 			break;
 		}
-
 		printf("Value checked at index [%ld] = [%d]\n", runner->index, runner->n);
 	}
-
 	printf("Value found between indexes [%ld] and [%ld]\n",
 			prev->index, runner->index);
-
 	while (prev->index <= runner->index)
 	{
 		if (prev->index == runner->index)
@@ -68,13 +63,11 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 			else
 				return (NULL);
 		}
-
 		if (prev->n == value)
 		{
 			printf("Value checked at index [%ld] = [%d]\n", prev->index, prev->n);
 			return (prev);
 		}
-
 		printf("Value checked at index [%ld] = [%d]\n", prev->index, prev->n);
 		prev = prev->next;
 	}
